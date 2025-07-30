@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veratis Insurance - Automated Email Processing + CAT Risk Detection</title>
+    <title>Veratis - AI-Powered Insurance Automation Platform</title>
+    <meta name="description" content="Transform your property insurance workflows with AI-powered automation. Process submissions 10x faster with intelligent document analysis and risk assessment.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        /* ==========================================================================
+           RESET & BASE STYLES
+           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-navy: #0A1628;
+            --secondary-navy: #1A2332;
+            --accent-teal: #14B8A6;
+            --accent-gold: #F59E0B;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-dark: #1E293B;
+            --background-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --success-green: #10B981;
+            --gradient-primary: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+            --gradient-accent: linear-gradient(135deg, #14B8A6 0%, #0891B2 100%);
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
-            background: #ffffff;
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
         
         .container {
@@ -24,60 +49,103 @@
             padding: 0 24px;
         }
         
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #e2e8f0;
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
         
-        nav {
+        /* ==========================================================================
+           NAVIGATION
+           ========================================================================== */
+        .navbar {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
+            padding: 1rem 24px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .logo {
             font-size: 1.75rem;
-            font-weight: 700;
-            color: #0f172a;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
             letter-spacing: -0.02em;
         }
         
         .logo span {
-            color: #3b82f6;
+            color: var(--accent-teal);
         }
         
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2.5rem;
+            align-items: center;
         }
         
         .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            color: #475569;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: #3b82f6;
+            color: var(--accent-teal);
         }
         
+        .nav-cta {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: var(--gradient-primary);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            color: white;
             position: relative;
             overflow: hidden;
+            padding-bottom: 80px;
         }
         
         .hero::before {
@@ -87,241 +155,264 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="90" cy="90" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="30" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="20" cy="70" r="1" fill="%23ffffff" opacity="0.04"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="60" cy="30" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="30" cy="70" r="1" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 700px;
+            color: var(--text-primary);
             padding-top: 100px;
         }
         
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(20, 184, 166, 0.15);
+            border: 1px solid rgba(20, 184, 166, 0.3);
             border-radius: 50px;
-            padding: 8px 16px;
+            padding: 8px 20px;
             font-size: 0.875rem;
-            font-weight: 500;
-            color: #93c5fd;
+            font-weight: 600;
+            color: var(--accent-teal);
             margin-bottom: 2rem;
+            letter-spacing: 0.02em;
         }
         
-        .hero-content h1 {
+        .hero h1 {
             font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
             line-height: 1.1;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
         
-        .hero-content h1 span {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        .hero .highlight {
+            background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .hero-subtitle {
-            font-size: 1.5rem;
+        .hero .subheadline {
+            font-size: 1.4rem;
             font-weight: 400;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.4;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
         }
         
         .hero-stats {
-            display: flex;
-            gap: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .stat-item {
+        .stat {
             text-align: center;
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #3b82f6;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
         }
         
         .stat-label {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
         
-        .cta-primary {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
+        .stat-description {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-accent);
             color: white;
-            padding: 16px 32px;
-            text-decoration: none;
+            padding: 18px 32px;
             border-radius: 12px;
+            text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-            margin-right: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        .cta-primary:hover {
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 12px 35px rgba(20, 184, 166, 0.4);
         }
         
-        .cta-secondary {
-            display: inline-flex;
-            align-items: center;
+        .btn-secondary {
             background: transparent;
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+            padding: 18px 32px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
+            text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
         
-        .cta-secondary:hover {
+        .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.4);
         }
         
-        .problem-section {
-            background: #f8fafc;
+        /* ==========================================================================
+           HOW IT WORKS SECTION
+           ========================================================================== */
+        .how-it-works {
             padding: 120px 0;
+            background: var(--background-light);
         }
         
         .section-header {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .section-title {
             font-size: 3rem;
             font-weight: 700;
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
-            color: #0f172a;
             line-height: 1.2;
         }
         
         .section-subtitle {
-            font-size: 1.25rem;
-            color: #64748b;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            color: #64748B;
+            font-weight: 400;
+            line-height: 1.5;
         }
         
-        .problem-grid {
+        .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .problem-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-        }
-        
-        .problem-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-        
-        .problem-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #ef4444, #dc2626);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .problem-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #0f172a;
-        }
-        
-        .problem-card p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-        
-        .solution-section {
-            background: white;
-            padding: 120px 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
             margin-top: 4rem;
         }
         
-        .feature-card {
-            background: #f8fafc;
+        .step-card {
+            background: white;
             padding: 3rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
         
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-        }
-        
-        .feature-card:hover {
+        .step-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
         
-        .feature-icon {
+        .step-number {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            background: var(--gradient-accent);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            margin: 0 auto 1.5rem;
+            font-weight: 700;
             color: white;
+            margin: 0 auto 2rem;
         }
         
-        .feature-card h3 {
+        .step-card h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #0f172a;
+            color: var(--text-dark);
+        }
+        
+        .step-card p {
+            color: #64748B;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        /* ==========================================================================
+           FEATURES SECTION
+           ========================================================================== */
+        .features {
+            padding: 120px 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: var(--background-light);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
         
         .feature-card p {
-            color: #64748b;
+            color: #64748B;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
@@ -331,166 +422,150 @@
             padding: 1rem;
             border-radius: 8px;
             font-size: 0.9rem;
-            font-weight: 500;
-            color: #059669;
-            border: 1px solid #d1fae5;
+            font-weight: 600;
+            color: var(--success-green);
+            border: 1px solid #D1FAE5;
         }
         
-        .roi-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
+        /* ==========================================================================
+           BENEFITS SECTION
+           ========================================================================== */
+        .benefits {
             padding: 120px 0;
+            background: var(--gradient-primary);
+            color: var(--text-primary);
             position: relative;
         }
         
-        .roi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        
-        .roi-card {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .roi-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #3b82f6;
-            margin-bottom: 0.5rem;
-        }
-        
-        .roi-label {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .roi-description {
-            opacity: 0.8;
-            line-height: 1.5;
-        }
-        
-        .pricing-section {
-            background: white;
-            padding: 120px 0;
-        }
-        
-        .pricing-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-            border: 2px solid #e2e8f0;
-            padding: 4rem;
-            border-radius: 24px;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-card::before {
+        .benefits::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
         }
         
-        .pricing-badge {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 2rem;
+        .benefits .container {
+            position: relative;
+            z-index: 2;
         }
         
-        .price {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin: 1rem 0;
-            line-height: 1;
-        }
-        
-        .price-period {
-            font-size: 1.2rem;
-            color: #64748b;
-            font-weight: 500;
-        }
-        
-        .price-features {
-            list-style: none;
-            text-align: left;
-            margin: 3rem 0;
+        .benefits-grid {
             display: grid;
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
         
-        .price-features li {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .price-features li:before {
-            content: "✓";
-            color: #059669;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-right: 1rem;
-            width: 24px;
-            height: 24px;
-            background: #d1fae5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .guarantee {
-            background: #eff6ff;
-            border: 2px solid #bfdbfe;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 3rem 0;
+        .benefit-card {
             text-align: center;
+            padding: 2rem;
         }
         
-        .guarantee h4 {
-            color: #1e40af;
+        .benefit-stat {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-bottom: 1rem;
+        }
+        
+        .benefits .section-title {
+            color: var(--text-primary);
             font-weight: 600;
-            margin-bottom: 0.5rem;
         }
         
-        .contact-section {
-            background: #f8fafc;
+        .benefits .section-subtitle {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* ==========================================================================
+           FAQ SECTION
+           ========================================================================== */
+        .faq {
             padding: 120px 0;
+            background: var(--background-light);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--background-light);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+        
+        .faq-answer {
+            padding: 0 2rem 2rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+        
+        /* ==========================================================================
+           CONTACT SECTION
+           ========================================================================== */
+        .contact {
+            padding: 120px 0;
+            background: white;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
+            background: var(--background-light);
+            padding: 4rem;
             border-radius: 20px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
         
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .form-group {
@@ -499,9 +574,10 @@
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #374151;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .form-group input,
@@ -509,336 +585,457 @@
         .form-group textarea {
             width: 100%;
             padding: 16px;
-            border: 2px solid #e5e7eb;
+            border: 2px solid var(--border-color);
             border-radius: 12px;
             font-size: 1rem;
-            transition: border-color 0.3s;
-            background: #f9fafb;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: white;
         }
         
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3b82f6;
-            background: white;
+            border-color: var(--accent-teal);
         }
         
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 3rem 0;
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
             text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* ==========================================================================
+           FLOATING CTA BUTTON
+           ========================================================================== */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .floating-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(20, 184, 166, 0.5);
+        }
+        
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--text-secondary);
+            padding: 4rem 0 2rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
         .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
+            color: var(--text-primary);
             font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
         .footer-section p,
         .footer-section a {
-            color: #94a3b8;
+            color: var(--text-secondary);
             text-decoration: none;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: block;
+            transition: color 0.3s ease;
         }
         
         .footer-section a:hover {
-            color: #3b82f6;
+            color: var(--accent-teal);
         }
         
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE DESIGN
+           ========================================================================== */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 0 16px;
             }
             
             .nav-links {
                 display: none;
             }
             
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subheadline {
+                font-size: 1.2rem;
+            }
+            
             .hero-stats {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            .form-row {
-                grid-template-columns: 1fr;
+            .hero-cta {
+                flex-direction: column;
             }
             
             .section-title {
                 font-size: 2.2rem;
             }
             
-            .cta-primary,
-            .cta-secondary {
-                display: block;
-                text-align: center;
-                margin-bottom: 1rem;
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .steps-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .step-card,
+            .feature-card,
+            .client-card {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Veratis <span>Insurance</span></div>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Veratis <span>AI</span></a>
             <ul class="nav-links">
-                <li><a href="#solution">Solution</a></li>
-                <li><a href="#roi">ROI</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Demo</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">ROI</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Request Demo</a></li>
             </ul>
-        </nav>
-    </header>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    ⚡ Live in 48 Hours
+                    🚀 AI-Powered Insurance Automation
                 </div>
-                <h1>Stop Losing Money on <span>Manual Email Processing</span></h1>
-                <p class="hero-subtitle">Every hour your underwriters spend copying data from emails costs you $40 in wasted labor + missed CAT risks that could cost millions. We eliminate both problems automatically.</p>
+                <h1>Property Insurance Submissions. <span class="highlight">Automated. CAT-Ready.</span></h1>
+                <p class="subheadline">Veratis uses AI to eliminate manual intake, accelerate decisions, and save up to <strong>45 minutes per submission</strong> — with built-in <strong>catastrophe risk analysis</strong> for smarter underwriting at scale.</p>
                 
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">$40</div>
-                        <div class="stat-label">Lost Per Hour</div>
+                    <div class="stat">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">Minutes Saved Per Submission</div>
+                        <div class="stat-description">Save 45+ minutes per submission — proven across real teams.</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2hrs</div>
-                        <div class="stat-label">Wasted Daily</div>
+                    <div class="stat">
+                        <div class="stat-number">CAT</div>
+                        <div class="stat-label">Advanced Risk Analysis</div>
+                        <div class="stat-description">Identifies flood, earthquake, fire, and wind exposure — with severity ratings.</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">$0</div>
-                        <div class="stat-label">With Automation</div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Fully Hands-Free Intake</div>
+                        <div class="stat-description">No portals. No uploads. AI scans emails and processes everything automatically.</div>
                     </div>
                 </div>
                 
-                <div style="margin-top: 3rem;">
-                    <a href="#contact" class="cta-primary">See Live Demo</a>
-                    <a href="#solution" class="cta-secondary">How It Works</a>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary">Request Live Demo →</a>
+                    <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="problem-section">
+    <!-- HOW IT WORKS SECTION -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Hidden Costs Killing Your Profitability</h2>
-                <p class="section-subtitle">Manual processing isn't just inefficient—it's bleeding money from labor costs AND exposing you to massive claim risks.</p>
+                <h2 class="section-title">How Veratis AI Transforms Your Workflow</h2>
+                <p class="section-subtitle">Three simple steps to revolutionize your property insurance processing with enterprise-grade AI automation.</p>
             </div>
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">💰</div>
-                    <h3>Bleeding $20,800 Per Underwriter Annually</h3>
-                    <p><strong>Cost:</strong> 2 hours daily × $40/hour × 260 days = $20,800 in pure waste per underwriter. You're paying professional rates for data entry work.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Intelligent Document Ingestion</h3>
+                    <p>AI automatically extracts and validates data from any submission format - emails, PDFs, photos, or forms. Our smart parsing technology understands context and catches discrepancies humans miss.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🔥</div>
-                    <h3>Million-Dollar CAT Claims You Could Have Prevented</h3>
-                    <p><strong>Risk:</strong> Manual research misses wildfire zones, flood plains, earthquake faults. One undetected CAT property can generate $500K-$2M+ in claims.</p>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Automated Risk Assessment & CAT Analysis</h3>
+                    <p>Advanced algorithms instantly analyze property risk factors, cross-reference databases, and perform comprehensive catastrophe risk analysis for flood, earthquake, fire, and wind exposure. Get complete risk profiles in seconds, not hours.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">⚠️</div>
-                    <h3>Regulatory Violations From Moratorium Mistakes</h3>
-                    <p><strong>Penalty:</strong> Binding policies in active moratorium zones leads to forced cancellations, regulatory fines, and reputation damage with state insurance departments.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🐌</div>
-                    <h3>Losing Competitive Deals to Speed</h3>
-                    <p><strong>Opportunity Cost:</strong> 45-minute manual process vs competitors' 5-minute automated quotes. You're losing 30%+ of time-sensitive submissions.</p>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Instant Decision Support</h3>
+                    <p>Receive AI-powered recommendations with confidence scores and detailed reasoning. Accelerate underwriting decisions while maintaining accuracy and compliance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="solution-section" id="solution">
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Eliminate Costs + Eliminate CAT Risks = Pure Profit</h2>
-                <p class="section-subtitle">Turn your biggest expense (manual processing) into your biggest competitive advantage (automated CAT detection).</p>
+                <h2 class="section-title">Engineered for the Future of Insurance</h2>
+                <p class="section-subtitle">AI tools designed to eliminate friction, scale workflows, and give property professionals a competitive edge.</p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Eliminate $20,800 Annual Waste Per Underwriter</h3>
-                    <p>Zero manual email processing. AI extracts all data automatically. Your underwriters focus on actual underwriting, not data entry.</p>
-                    <div class="feature-benefit">Instant 315% ROI on eliminated labor costs alone</div>
+                    <div class="feature-icon">🤖</div>
+                    <h3>Smart Document Analysis</h3>
+                    <p>AI-powered OCR and NLP extract data from any document format with 99.5% accuracy. Handles handwritten forms, photos, and complex insurance documents seamlessly.</p>
+                    <div class="feature-benefit">Eliminate 8+ hours of manual data entry weekly - per underwriter</div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔥</div>
-                    <h3>Prevent Million-Dollar CAT Losses</h3>
-                    <p>Every property automatically checked for wildfire, flood, earthquake, and hail risks. Never bind a high-risk property without knowing it.</p>
-                    <div class="feature-benefit">Avoid one $1M+ CAT claim = 16+ years of system costs</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚠️</div>
-                    <h3>Zero Moratorium Violations</h3>
-                    <p>Real-time checking against active moratorium zones. System prevents binding in restricted areas before you even see the submission.</p>
-                    <div class="feature-benefit">Eliminate regulatory risks and forced cancellations</div>
-                </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Beat Competitors on Speed</h3>
-                    <p>30-second processing vs 45+ minutes manual. Deliver quotes same-day while competitors are still reading emails.</p>
-                    <div class="feature-benefit">Win 30% more time-sensitive submissions</div>
+                    <h3>Real-Time CAT Risk Scoring</h3>
+                    <p>Instant catastrophe risk assessment for flood zones, earthquake fault lines, wildfire corridors, and severe wind areas. Get comprehensive CAT risk profiles with severity ratings and historical data in under 30 seconds.</p>
+                    <div class="feature-benefit">Reduce catastrophe risk assessment time by 95%</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Scale Without Hiring</h3>
-                    <p>Handle 10x submission volume with same underwriting team. Growth doesn't require proportional headcount increases.</p>
-                    <div class="feature-benefit">Expand market share without expanding costs</div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Superior Risk Selection</h3>
-                    <p>Complete CAT risk profile on every submission. Write only the profitable business, automatically avoid the losers.</p>
-                    <div class="feature-benefit">Improve loss ratios through automated risk intelligence</div>
+                    <div class="feature-icon">🔗</div>
+                    <h3>Seamless System Integration</h3>
+                    <p>Connect with your existing management systems, CRM, and databases. API-first design ensures smooth data flow without disrupting current workflows.</p>
+                    <div class="feature-benefit">Deploy in 48 hours with zero downtime</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="roi-section" id="roi">
+    <!-- BENEFITS SECTION -->
+    <section class="benefits" id="benefits">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Math: Save $20K+ Per Year, Per Underwriter</h2>
-                <p class="section-subtitle">Conservative calculations show 315% ROI from eliminated waste alone. CAT risk prevention is pure upside.</p>
+                <h2 class="section-title">Measurable Impact on Your Bottom Line</h2>
+                <p class="section-subtitle">Our clients see dramatic improvements in efficiency, accuracy, and profitability within the first month of implementation.</p>
             </div>
             
-            <div class="roi-grid">
-                <div class="roi-card">
-                    <div class="roi-number">$20,800</div>
-                    <div class="roi-label">Eliminated Waste Per Underwriter</div>
-                    <div class="roi-description">2 hours daily × $40/hour × 260 working days = $20,800 in pure waste eliminated per underwriter annually</div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-stat">45+</div>
+                    <div class="benefit-title">Minutes Saved Per Submission</div>
+                    <div class="benefit-description">No more manual intake or triage — it's fully automated</div>
                 </div>
-                
-                <div class="roi-card">
-                    <div class="roi-number">$1M+</div>
-                    <div class="roi-label">CAT Claims Prevention Value</div>
-                    <div class="roi-description">Preventing just one major wildfire, flood, or earthquake claim pays for the system for 16+ years</div>
+                <div class="benefit-card">
+                    <div class="benefit-stat">$30K+</div>
+                    <div class="benefit-title">Annual Savings Per Underwriter</div>
+                    <div class="benefit-description">Based on saving 2 hours daily at $60/hour. Additional savings come from reduced errors and claims through advanced catastrophe risk analysis</div>
                 </div>
-                
-                <div class="roi-card">
-                    <div class="roi-number">315%</div>
-                    <div class="roi-label">Guaranteed ROI</div>
-                    <div class="roi-description">$60K annual cost vs $20,800+ savings per underwriter. Breaks even with 3 underwriters, pure profit beyond that</div>
-                </div>
-                
-                <div class="roi-card">
-                    <div class="roi-number">30%</div>
-                    <div class="roi-label">More Competitive Wins</div>
-                    <div class="roi-description">Beat competitors on speed with 30-second processing. Each won deal generates $2K-$10K+ in premium revenue</div>
+                <div class="benefit-card">
+                    <div class="benefit-stat">CAT</div>
+                    <div class="benefit-title">Automatic Risk-Based Rejection</div>
+                    <div class="benefit-description">Properties with multiple prior claims (3+ in 5 years) are automatically flagged or rejected — protecting your portfolio from repeat claim risks and high-loss exposures</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing-section" id="pricing">
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Pays For Itself in 90 Days</h2>
-                <p class="section-subtitle">$5K/month investment vs $20K+ annual savings per underwriter. Even with one underwriter, you're profitable in 3 months.</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to common questions about implementation, security, and ROI.</p>
             </div>
             
-            <div class="pricing-card">
-                <div class="pricing-badge">Complete Platform</div>
-                <h3>Email Automation + CAT Risk Detection</h3>
-                <div class="price">$5,000<span class="price-period">/month</span></div>
-                
-                <ul class="price-features">
-                    <li>Unlimited email submission processing</li>
-                    <li>AI data extraction from any email format</li>
-                    <li>Real-time CAT risk scoring (wildfire, flood, earthquake, hail)</li>
-                    <li>Automatic moratorium zone checking</li>
-                    <li>Property data enrichment from multiple sources</li>
-                    <li>Integration with your existing systems</li>
-                    <li>48-hour implementation and setup</li>
-                    <li>Processing dashboard and reporting</li>
-                    <li>Email and phone support</li>
-                    <li>Monthly performance reviews</li>
-                </ul>
-                
-                <div class="guarantee">
-                    <h4>💰 ROI Guarantee</h4>
-                    <p>If you don't save at least $5,000 in eliminated labor costs within 60 days, we'll refund every penny. You literally cannot lose money.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">How quickly can we see results after implementation?</div>
+                    <div class="faq-answer">Most clients see immediate improvements in processing speed within 48 hours of deployment. Full ROI typically realizes within 30-60 days as teams adapt to the automated workflow.</div>
                 </div>
-                
-                <a href="#contact" class="cta-primary" style="width: 100%; justify-content: center; margin-top: 2rem;">Start Free 7-Day Trial</a>
+                <div class="faq-item">
+                    <div class="faq-question">What types of documents can your AI process?</div>
+                    <div class="faq-answer">Our AI handles all common insurance document formats including PDFs, images, emails, handwritten forms, and structured data files. The system learns and adapts to your specific document types.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does pricing work for teams of different sizes?</div>
+                    <div class="faq-answer">Our platform starts at $5,000/month for unlimited processing. This typically covers teams of 3-10 underwriters. Larger enterprise deployments have custom pricing based on volume and feature requirements.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What security measures protect our sensitive data?</div>
+                    <div class="faq-answer">We maintain SOC 2 Type II compliance, use bank-grade encryption, and provide complete audit trails. All data is processed in secure, isolated environments with no data retention unless specified.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you integrate with existing insurance management systems?</div>
+                    <div class="faq-answer">Yes, we offer pre-built integrations with major insurance platforms and a flexible API for custom integrations. Our team handles the technical setup to ensure seamless data flow.</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <div class="container">
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
             <div class="section-header">
-                <h2 class="section-title">Calculate Your Exact Savings</h2>
-                <p class="section-subtitle">See the specific dollar amount you'll save based on your team size. Most clients see 6-figure annual savings.</p>
+                <h2 class="section-title">See Veratis AI in Action</h2>
+                <p class="section-subtitle">Schedule a personalized demo and discover how AI automation can transform your property insurance operations.</p>
             </div>
             
-            <div class="contact-form">
-                <form action="mailto:info@veratisinsurance.com" method="post" enctype="text/plain">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Business Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="company">Insurance Company *</label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Your Role *</label>
-                            <select id="role" name="role" required>
-                                <option value="">Select your role</option>
-                                <option value="underwriting-manager">Underwriting Manager</option>
-                                <option value="operations-director">Operations Director</option>
-                                <option value="vp-underwriting">VP of Underwriting</option>
-                                <option value="cto-cio">CTO/CIO</option>
-                                <option value="ceo-president">CEO/President</option>
-                                <option value="underwriter">Senior Underwriter</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    
+            <form class="contact-form" action="mailto:demo@veratisinsurance.com" method="post" enctype="text/plain">
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="submissions">Approximate Email Submissions per Week</label>
-                        <select id="submissions" name="submissions">
-                            <option value="">Select
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Business Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Your Position *</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select your role</option>
+                            <option value="underwriting-manager">Underwriting Manager</option>
+                            <option value="operations-director">Operations Director</option>
+                            <option value="vp-underwriting">VP of Underwriting</option>
+                            <option value="risk-manager">Risk Manager</option>
+                            <option value="cto-cio">CTO/CIO</option>
+                            <option value="ceo-president">CEO/President</option>
+                            <option value="senior-underwriter">Senior Underwriter</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell us about your current challenges</label>
+                    <textarea id="message" name="message" placeholder="Describe your submission volume, processing challenges, or specific automation needs..."></textarea>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn-primary">Request Demo →</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FLOATING CTA BUTTON -->
+    <a href="#contact" class="floating-cta">Request Demo</a>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Veratis AI</h4>
+                    <p>Transforming property insurance with intelligent automation.</p>
+                    <p>Enterprise-grade AI solutions for modern insurance professionals.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#benefits">ROI Calculator</a>
+                    <a href="#contact">Request Demo</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#faq">FAQ</a>
+                    <a href="#">Security</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:demo@veratisinsurance.com">demo@veratisinsurance.com</a>
+                    <a href="tel:+1-555-0123">+1 (555) 012-3456</a>
+                    <p>Available Monday-Friday<br>9 AM - 6 PM EST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Veratis AI. All rights reserved. | Built for property insurance professionals.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
