@@ -79,11 +79,15 @@ margin: 0 auto;
 }
 
 .logo {
-font-size: 1.75rem;
-font-weight: 800;
-color: var(--text-primary);
-text-decoration: none;
-letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1); /* Makes logo white on dark background */
 }
 
 .logo span {
