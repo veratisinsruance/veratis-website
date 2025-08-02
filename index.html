@@ -133,6 +133,61 @@ border: none;
 color: white;
 font-size: 1.5rem;
 cursor: pointer;
+padding: 5px;
+}
+
+.mobile-menu {
+display: none;
+position: fixed;
+top: 80px;
+left: 0;
+right: 0;
+background: rgba(10, 22, 40, 0.98);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+z-index: 999;
+}
+
+.mobile-menu.active {
+display: block;
+}
+
+.mobile-menu ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.mobile-menu li {
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu li:last-child {
+border-bottom: none;
+}
+
+.mobile-menu a {
+display: block;
+padding: 1rem 24px;
+color: var(--text-secondary);
+text-decoration: none;
+font-weight: 500;
+font-size: 1rem;
+transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+color: var(--accent-teal);
+background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu .nav-cta {
+background: var(--gradient-accent);
+color: white !important;
+margin: 1rem 24px;
+padding: 16px 24px;
+border-radius: 8px;
+text-align: center;
 }
 
 /* ==========================================================================
@@ -798,7 +853,7 @@ display: none;
 }
 
 .mobile-menu-toggle {
-display: none;
+display: block;
 }
 
 .hero h1 {
@@ -898,8 +953,20 @@ padding: 2rem;
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#contact" class="nav-cta">Request Demo</a></li>
 </ul>
+<button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
 </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<ul>
+<li><a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a></li>
+<li><a href="#features" onclick="closeMobileMenu()">Features</a></li>
+<li><a href="#benefits" onclick="closeMobileMenu()">ROI</a></li>
+<li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
+<li><a href="#contact" class="nav-cta" onclick="closeMobileMenu()">Request Demo</a></li>
+</ul>
+</div>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -1260,6 +1327,7 @@ We are committed to responsible data handling and maintaining the trust you plac
 </footer>
 
 <script>
+// Privacy modal functions
 function openPrivacyModal() {
     document.getElementById('privacyModal').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1268,6 +1336,17 @@ function openPrivacyModal() {
 function closePrivacyModal() {
     document.getElementById('privacyModal').classList.remove('active');
     document.body.style.overflow = 'auto';
+}
+
+// Mobile menu functions
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.remove('active');
 }
 
 // Close modal when clicking outside
@@ -1281,6 +1360,16 @@ document.getElementById('privacyModal').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closePrivacyModal();
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        mobileMenu.classList.remove('active');
     }
 });
 </script>
