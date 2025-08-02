@@ -1377,3 +1377,41 @@ document.addEventListener('click', function(e) {
 </script>
 </body>
 </html>
+
+
+<div class="benefits-grid">
+  <div class="benefit-card">
+    <div class="benefit-stat">45+</div>
+    <div class="benefit-title">Minutes Saved Per Submission</div>
+    <div class="benefit-description">No more manual intake or triage, it's fully automated</div>
+  </div>
+  <div class="benefit-card">
+    <div class="benefit-stat">$30K+</div>
+    <div class="benefit-title">Annual Savings Per Underwriter</div>
+    <div class="benefit-description">Based on saving 2 hours daily at $60/hour. Additional savings come from reduced errors and claims through advanced catastrophe risk analysis</div>
+  </div>
+  <div class="benefit-card">
+    <div class="benefit-stat">CAT</div>
+    <div class="benefit-title">Automatically flags</div>
+    <div class="benefit-description">properties with flood, fire, wind, or earthquake risk so you can steer clear of costly losses.</div>
+  </div>
+</div>
+
+<!-- ROI Calculator Inserted Here -->
+<div style="margin-top: 80px; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
+  <h2 style="text-align:center; font-size:2rem; margin-bottom: 1.5rem; color: var(--text-dark);">📊 Calculate Your ROI</h2>
+  <p style="text-align:center; margin-bottom: 2rem; color: #475569;">See how much time and money Veratis can save your team every year.</p>
+
+  <label># of Underwriters</label>
+  <input type="number" id="underwriters" placeholder="e.g. 5" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
+
+  <label># of Submissions per Underwriter per Day</label>
+  <input type="number" id="submissions" placeholder="e.g. 10" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
+
+  <label>Hourly Cost per Underwriter ($)</label>
+  <input type="number" id="hourlyRate" placeholder="e.g. 60" style="width: 100%; padding: 12px; margin: 8px 0 24px; border-radius: 8px; border: 1px solid #CBD5E1;">
+
+  <button onclick="calculateROI()" style="width: 100%; padding: 14px; background: var(--gradient-accent); color: white; font-weight: 600; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">Calculate ROI</button>
+
+  <div id="roi-output" style="display:none; margin-top: 2rem; background: #F1F5F9; padding: 20px; border-radius: 12px; font-size: 1rem; color: #334155;"></div>
+</div>
