@@ -931,7 +931,9 @@ padding: 2rem;
 <p class="section-subtitle">Schedule a personalized  and discover how AI automation can transform your property insurance operations.</p>
 </div>
 
-<form class="contact-form" action="mailto:info@veratisinsurance.com" method="post" enctype="text/plain">
+<form class="contact-form" name="contact" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="contact" />
+<form class="contact-form" name="contact" method="POST" data-netlify="true" action="/thank-you">
 <div class="form-row">
 <div class="form-group">
 <label for="firstName">First Name *</label>
