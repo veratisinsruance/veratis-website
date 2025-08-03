@@ -1114,18 +1114,37 @@ padding: 2rem;
 </div>
 
 <!-- ROI Calculator Inserted Here -->
+<div class="benefits-grid">
+  <div class="benefit-card" style="background: #f9fafb; padding: 24px; border-radius: 12px;">
+    <div class="benefit-stat" style="font-size: 2rem; font-weight: bold; color: #0f172a;">45+</div>
+    <div class="benefit-title" style="font-weight: 600; color: #1e293b;">Minutes Saved Per Submission</div>
+    <div class="benefit-description" style="color: #475569; font-size: 0.95rem;">No more manual intake or triage — it's fully automated.</div>
+  </div>
+  <div class="benefit-card" style="background: #f9fafb; padding: 24px; border-radius: 12px;">
+    <div class="benefit-stat" style="font-size: 2rem; font-weight: bold; color: #0f172a;">$30K+</div>
+    <div class="benefit-title" style="font-weight: 600; color: #1e293b;">Annual Savings Per Underwriter</div>
+    <div class="benefit-description" style="color: #475569; font-size: 0.95rem;">Based on saving 2 hours daily at $60/hour — not including savings from better decisions or CAT risk reduction.</div>
+  </div>
+  <div class="benefit-card" style="background: #f9fafb; padding: 24px; border-radius: 12px;">
+    <div class="benefit-stat" style="font-size: 2rem; font-weight: bold; color: #0f172a;">CAT</div>
+    <div class="benefit-title" style="font-weight: 600; color: #1e293b;">Automatically Flags</div>
+    <div class="benefit-description" style="color: #475569; font-size: 0.95rem;">Flood, fire, wind & earthquake exposure — so you avoid costly losses before they happen.</div>
+  </div>
+</div>
+
+<!-- ROI Calculator Inserted Here -->
 <div style="margin-top: 80px; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 600px; margin-left: auto; margin-right: auto;">
   <h2 style="text-align:center; font-size:2rem; margin-bottom: 1.5rem; color: var(--text-dark);">📊 Calculate Your ROI</h2>
   <p style="text-align:center; margin-bottom: 2rem; color: #475569;">See how much time and money Veratis can save your team every year. Based on 45 minutes saved per submission.</p>
 
   <label for="underwriters">Number of Underwriters</label>
-  <input type="number" id="underwriters" placeholder="Enter number of underwriters" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
+  <input type="number" id="underwriters" placeholder="e.g. 5" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
 
   <label for="submissions">Submissions per Underwriter per Day</label>
-  <input type="number" id="submissions" placeholder="Enter average daily submissions" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
+  <input type="number" id="submissions" placeholder="e.g. 10" style="width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 8px; border: 1px solid #CBD5E1;">
 
   <label for="hourlyRate">Hourly Cost per Underwriter ($)</label>
-  <input type="number" id="hourlyRate" placeholder="Enter hourly rate (e.g. 60)" style="width: 100%; padding: 12px; margin: 8px 0 24px; border-radius: 8px; border: 1px solid #CBD5E1;">
+  <input type="number" id="hourlyRate" placeholder="e.g. 60" style="width: 100%; padding: 12px; margin: 8px 0 24px; border-radius: 8px; border: 1px solid #CBD5E1;">
 
   <button id="calculate-btn" style="width: 100%; padding: 14px; background: var(--gradient-accent); color: white; font-weight: 600; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">Calculate ROI</button>
 
