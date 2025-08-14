@@ -1138,12 +1138,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const yearlyTimeSaved = weeklyTimeSaved * 52;
       const yearlyCostSavings = yearlyTimeSaved * hourlyRate;
 
-      const output = 
+      const output = `
         <strong>Estimated Time & Cost Savings:</strong><br><br>
         ⏱️ <strong>${weeklyTimeSaved.toFixed(1)} hours/week</strong> saved<br>
         📅 <strong>${yearlyTimeSaved.toFixed(0)} hours/year</strong> saved<br>
         💰 <strong>$${yearlyCostSavings.toLocaleString()}</strong> in estimated ROI/year
-      ;
+      `;
 
       const outputEl = document.getElementById('roi-output');
       outputEl.style.display = 'block';
@@ -1173,11 +1173,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <div class="faq-item">
 <div class="faq-question">How does pricing work for teams of different sizes?</div>
-<div class="faq-answer">Our platform starts at $5,000/month for unlimited processing. This typically covers teams of 3-10 underwriters. Larger enterprise deployments have custom pricing based on volume and feature requirements.</div>
+<div class="faq-answer">Our platform starts at $2,000/month for unlimited processing. This typically covers teams of 3-10 underwriters. Larger enterprise deployments have custom pricing based on volume and feature requirements.</div>
 </div>
 <div class="faq-item">
-<div class="faq-question">What security measures protect our sensitive data?</div>
-<div class="faq-answer">We maintain SOC 2 Type II compliance, use bank-grade encryption, and provide complete audit trails. All data is processed in secure, isolated environments with no data retention unless specified.</div>
+<div class="faq-question">How do you ensure data security and privacy?</div>
+<div class="faq-answer">Our platform uses secure n8n workflows with enterprise-grade encryption and processes data through trusted AI providers including OpenAI and Mistral. All data processing follows strict privacy protocols with no permanent data storage unless specified for your business needs.</div>
 </div>
 <div class="faq-item">
 <div class="faq-question">Do you integrate with existing insurance management systems?</div>
